@@ -1,7 +1,7 @@
 /* Basic responsive styles for Kate Simone's homepage recreation */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin: 0;
+  font-family: "Space Mono", monospace;
+  margin: 4rem;
   padding: 0;
   background: #f8f9fa;
   color: #222;
@@ -10,7 +10,6 @@ body {
 .divider {
   display: flex;
   gap: 3rem;
-  margin: 1rem 3rem;
 }
 
 main {
@@ -21,7 +20,7 @@ main {
   width: 20%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.1rem;
   margin: 2rem 0 1rem 0;
 }
 
@@ -30,7 +29,7 @@ main {
   border-radius: 0.25rem;
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 300;
   background-color: #3d3d3d;
   transition: 0.2s, border 0.2s;
 }
@@ -52,23 +51,17 @@ main {
   color: #f2f2f2 !important;
 }
 
-.arrowColour {
-  stroke: white;
-  fill: white;
-}
-
 nav {
   background: #f8f9fa;
   border-bottom: #000000 solid 0.1rem;
   display: flex;
   align-items: baseline;
-  margin: 2rem 4rem;
   padding-bottom: 0.5rem;
   gap: 2rem;
   font-family: "Space Mono", monospace;
 }
 
-.nameFlex {
+.heading {
   display: flex;
   align-items: flex-start;
   align-items: baseline;
@@ -77,7 +70,7 @@ nav {
 
 .name {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 300;
   text-decoration: none;
   color: black;
 }
@@ -86,7 +79,7 @@ nav .subtitle {
   color: #666;
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 nav .time {
@@ -96,18 +89,13 @@ nav .time {
   margin-left: auto;
 }
 
-.content {
-  margin-left: 4rem;
-  margin-right: 4rem;
-}
-
 .hero {
-  padding: 2rem 1rem 1rem 1rem;
+  padding-top: 4rem;
 }
 
 .hero h1 {
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
@@ -123,21 +111,20 @@ nav .time {
 .hero .roles {
   display: inline-block;
   margin: 0.25rem 0;
-  background: #e3f0fc;
+  background: #e2e5e8;
   padding: 0.3rem 1rem;
   font-family: "Roboto", sans-serif;
   font-style: italic;
-
   width: fit-content;
   border-radius: 0.25rem;
 }
 
 .hero .role {
   display: inline-block;
-  color: #2a7ae2;
+  color: #686d72;
   margin: 0;
   border-radius: 1.2rem;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 400;
 }
 
@@ -149,15 +136,16 @@ nav .time {
   padding: 2rem 2rem;
 }
 
-.about h2 {
+h2 {
   margin-top: 0;
   margin-bottom: 0;
-  color: #2a7ae2;
-  font-size: 2rem;
+  color: #3f3f40;
+  font-size: 1rem;
   font-family: "Space mono", monospace;
+  font-weight: 300;
 }
 
-.about p {
+p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
@@ -182,6 +170,74 @@ nav .time {
     gap: 0.1em;
   }
 }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.bar {
+  display: flex;
+  height: 28px;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.segment {
+  height: 100%;
+}
+
+.burned-out {
+  background: #f2b5a7;
+}
+
+.symptoms {
+  background: #cfe5f1;
+}
+
+.stressed {
+  background: #8fd1c2;
+}
+
+.none {
+  background: #1b6f6a;
+}
+
 
 @media (width <=43.75rem) {
 
@@ -227,6 +283,14 @@ nav .time {
     margin: 2rem 2.5rem;
   }
 
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .label {
+    margin-bottom: 0.25rem;
+  }
+
 }
 @media(width < 21rem){
   .divider {
@@ -267,4 +331,16 @@ nav .time {
 
 .animate-swap {
   animation: textSwap 0.5s forwards;
+}
+
+/* Hat container */
+.hat {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.hat svg {
+  max-width: 100%;
+  height: auto;
 }

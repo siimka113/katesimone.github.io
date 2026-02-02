@@ -5,17 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizations</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+    
 </head>
 <body>
-    <nav class="header">
-    <div class="nameFlex">
+   <nav>
+    <div class="heading">
       <a href="index.html" class="name">Kate Simone</a>
       <p class="subtitle">Product Designer based in Vancouver, Canada</p>
     </div>
-    <p class="time">11:00 PM</p>
+    <div class="time">11:00 PM</div>
+
   </nav>
-    
+
+  <h1>Physician Self-Reported Burnout Status before and after implementing a Team-based care model</h1>
+
+  <p>
+    Using participants’ own definition of “burnout”, responses were grouped
+    into four categories.
+  </p>
+
+  <h2>Legend</h2>
+  <div class="legend">
+    <div class="legend-item">
+      <span class="swatch burned-out"></span>
+      Completely burned out
+    </div>
+    <div class="legend-item">
+      <span class="swatch symptoms"></span>
+      One or more symptoms of burnout
+    </div>
+    <div class="legend-item">
+      <span class="swatch stressed"></span>
+      Under stress, don’t feel burned out
+    </div>
+    <div class="legend-item">
+      <span class="swatch none"></span>
+      No symptoms of burnout
+    </div>
+  </div>
+
+  <h2>Results</h2>
+  <br>
+  <div class="chart" id="chart"></div>
+
+  <p>Source: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11350937/">
+    Team-based care in specialist practice: a path to improved physician experience in British Columbia</a></p>
+
+  <div class="about">
+  <br>
+  <h2>Straw hat art</h2>
+  <div id="hat-container" class="hat"></div>
+
+  <script src="vis.js"></script>
+
+  </div>
+
 </body>
 </html>

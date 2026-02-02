@@ -30,5 +30,5 @@ function updateTime() {
   timeElement.textContent = currentTime;
 }
 updateTime(); 
-setInterval(updateTime, 1000); // 1000ms is better for real-time updates
+setInterval(updateTime, 1000);
 
