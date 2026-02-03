@@ -65,7 +65,6 @@ data.forEach(row => {
 
 function createStrawHat(containerId) {
   const container = document.getElementById(containerId);
-  if (!container) return;
 
   const svgNS = "http://www.w3.org/2000/svg";
   const w = 300, h = 160;
@@ -74,7 +73,7 @@ function createStrawHat(containerId) {
   svg.setAttribute("width", w);
   svg.setAttribute("height", h);
   svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-  svg.setAttribute("aria-label", "Straw hat illustration");
+  svg.setAttribute("aria-label", "Straw hat");
   svg.style.display = "block";
 
   const brim = document.createElementNS(svgNS, "rect");
