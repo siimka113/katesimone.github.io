@@ -140,12 +140,10 @@ fetchData().then(async (data) => {
       .title("Platform")
       .sort({field: "rank", op: "min", order: "ascending"})
       .scale({
-        // This tells Vega-Lite: Use these specific colors in this order.
-        // We pick a standard scheme for the first 10, and force 'grey' for the 11th.
         range: [
           "#0052cc", "#00b300", "#1a75ff", "#ffd633", "#ffaa00", 
           "#3399ff", "#ff8533", "#99ccff", "#e6f0ff", "#bab0ac", 
-          "#d3d3d3" // This 11th color is for "Other"
+          "#d3d3d3"
         ]
       }),
     vl.order().fieldQ("rank").sort("ascending") 
@@ -167,7 +165,6 @@ fetchData().then(async (data) => {
       vl.y().sum('sales_m')
     ),
 
-  // --- LAYER 2: THE TOP PERFORMERS (POINTS) ---
   vl.markPoint({size: 500, filled: true})
     .transform(
       vl.calculate('(floor(datum.year / 5) * 5) + 2.5').as('year_bin'),
@@ -185,7 +182,7 @@ fetchData().then(async (data) => {
         .axis({format: 'd'}),
       vl.y().fieldQ('platform_sales_m')
         .title('Global Sales (Millions)')
-        .axis({ format: '.0f' }), // This is where the formatting goes
+        .axis({ format: '.0f' }), 
       vl.color().fieldN('platform').title('Top Platform'),
       vl.shape().fieldN('genre').title('Top Genre'),
       vl.tooltip([
@@ -220,23 +217,18 @@ const vlSpec3 = vl
     
   )
   .encode(
-    // X-axis: The Region categories
     vl.x().fieldN('sales_region')
       .title('Region')
       .axis({labelAngle: 0}),
 
-    // xOffset: This now shows ALL 8 unique platforms in every region group
     vl.xOffset().fieldN('platform'),
 
-    // Y-axis: Sales sum
     vl.y().fieldQ('total_sales')
       .title('Sales (Millions)'),
 
-    // Color: Keeps the platform colors consistent
     vl.color().fieldN('platform')
       .title('Top Platforms')
       .scale({domain: ['DS', 'NES', 'SNES', 'PS', 'PS2', 'PS3', 'Wii', 'X360'], 
-        // Define the corresponding hex colors
         range: ['#ffaa00', '#ff7f0e', '#fa4d2a', '#3399ff', '#0052cc', '#1a75ff', '#ffd633', '#00b300']}),
 
     vl.tooltip([
@@ -285,7 +277,6 @@ const vlSpec3 = vl
 
 const vlSpec5 = vl
   .layer(
-  // Layer 1: The Bar Chart
   vl.markBar()
   .title({text: "Category: Genre", fontSize: 16,
   anchor: "start"
@@ -295,7 +286,6 @@ const vlSpec5 = vl
       vl.y().fieldN("genre").sort("-x").title("Genre")
     ),
 
-  // Layer 2: The Statistics Text
   vl.markText({
     align: 'left',
     baseline: 'top',
@@ -324,9 +314,9 @@ const vlSpec5 = vl
     ).as("summary")
   )
   .encode(
-    vl.x().value(-20), // Absolute position 0 (left)
-    vl.y().value(-20), // Absolute position 0 (top)
-    vl.text().fieldN("summary") // Display the 'summary' field we just created
+    vl.x().value(-20), 
+    vl.y().value(-20), 
+    vl.text().fieldN("summary") 
   )
 )
 .data(data)
