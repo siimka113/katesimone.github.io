@@ -344,3 +344,21 @@ p {
   max-width: 100%;
   height: auto;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: rgb(244, 244, 244);
+}
+
+.flexGraph {
+  display: flex;
+  gap: 2rem;
+}
+
+.flexGraph > div {
+  flex: 1; 
+  min-width: 0;        
+}
